@@ -3,6 +3,8 @@
 import Fooditems from "./Components/Fooditems";
 import ErrorMsg from "./Components/ErrorMsg";
 import './App.css';
+import Container from "./Components/Container";
+import FoodInput from "./Components/FoodInput";
 function App() {
  // return <react.Fragment>
  // <div> Healthy Foods </div>                     //FRAGMENTS
@@ -23,12 +25,21 @@ let foodItems = ["Dal" , "Rice" , "Salad" , "Vegetables" , "Sprouts" , "Fruits" 
 //  return <h1>I am Hungry</h1>      //Conditional Rendering using IF-Else
  // }
 
-return  <>                                          
+return  (
+<>
+<Container>                                       
 <h1>Healthy Foods</h1>
-<ErrorMsg items = {foodItems}></ErrorMsg>                  
+<ErrorMsg items = {foodItems}></ErrorMsg>     
+<FoodInput/>             
 <Fooditems items = {foodItems}></Fooditems>
-</>
+</Container>   
 
+<Container>
+  <p>Above are the list of healthy food items that are good for your health and well-being</p>
+</Container>
+
+</>
+);
 }
 
 export default App;
