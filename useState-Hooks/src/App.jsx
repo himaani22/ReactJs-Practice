@@ -18,7 +18,6 @@ function App() {
  // </ul>
 // </react.Fragment>
 
-let foodItems = ["Dal" , "Rice" , "Salad" , "Vegetables" , "Sprouts" , "Fruits" ]       //MAPS
 
 
 //let textStateArr = useState("Food item entered by user");          //State Hook
@@ -26,15 +25,26 @@ let foodItems = ["Dal" , "Rice" , "Salad" , "Vegetables" , "Sprouts" , "Fruits" 
 //let setTextState = textStateArr[1];
 
 //or we can write in a single line as below
- const [textToShow , setTextState] = useState();
+// let [textToShow , setTextState] = useState();
+ let [foodItems , setFoodItems] = useState([ ]);
 
 //console.log(`Current value of TextState = ${textToShow}`);
 
 
 
-const handleOnChange = (event) =>{ console.log(event.target.value)       // Here it is passing from parent to child using event object
-setTextState(event.target.value);
-};  
+const onKeyDown = (event) =>{                                // Here it is passing from parent to child using event object
+  if (event.key === 'Enter'){
+let newFoodItem = event.target.value;
+event.target.value = ""; // Clear the input field after adding the item
+setFoodItems([...foodItems , newFoodItem]);   //Spread Operator
+
+console.log(`New food item entered is ${newFoodItem}`);
+  }
+};
+  
+//  console.log(event)       
+// setTextState(event.target.value);
+//};  
 //  let foodItems = [];
 
 // if(foodItems.length === 0){
@@ -45,15 +55,13 @@ return  (
 <>
 <Container>                                       
 <h1>Healthy Foods</h1>
-<ErrorMsg items = {foodItems}></ErrorMsg>     
-<FoodInput handleOnChange={handleOnChange}> </FoodInput>  
-<p>{textToShow}</p>           
+   
+<FoodInput handleKeyDown={onKeyDown}> </FoodInput>   
+<ErrorMsg items = {foodItems}></ErrorMsg>       
 <Fooditems items = {foodItems}></Fooditems>
 </Container>   
 
-<Container>
-  <p>Above are the list of healthy food items that are good for your health and well-being</p>
-</Container>
+
 
 </>
 );

@@ -1,0 +1,13 @@
+.kg-items{
+    background-color: rgb(179, 241, 193);
+    margin: 10px;
+    border: 2px;
+    font-weight: 900;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+}
+.btn-info{
+    float: right;
+}
