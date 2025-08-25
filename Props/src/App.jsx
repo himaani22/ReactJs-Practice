@@ -19,6 +19,8 @@ function App() {
 
 let foodItems = ["Dal" , "Rice" , "Salad" , "Vegetables" , "Sprouts" , "Fruits" ]       //MAPS
 
+const handleOnChange = (event) =>{ console.log(event.target.value)};         // Here it is passing from parent to child using event object
+
 //  let foodItems = [];
 
 // if(foodItems.length === 0){
@@ -30,7 +32,7 @@ return  (
 <Container>                                       
 <h1>Healthy Foods</h1>
 <ErrorMsg items = {foodItems}></ErrorMsg>     
-<FoodInput/>             
+<FoodInput handleOnChange={handleOnChange}> </FoodInput>             
 <Fooditems items = {foodItems}></Fooditems>
 </Container>   
 
