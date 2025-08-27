@@ -1,3 +1,5 @@
+import { MdOutlineDeleteSweep } from "react-icons/md";
+
 function todoItem({TodoName , TodoDate , onDeleteClick}) {
    
 return  <div className="container ">
@@ -6,7 +8,7 @@ return  <div className="container ">
     <div className="col-4">{TodoDate}</div>
     <div className="col-2"><button type="button" className="btn btn-danger kg-button"
     onClick= { () => onDeleteClick(TodoName) }                //anonymous function
-    >Danger</button></div>
+    ><MdOutlineDeleteSweep /></button></div>
   </div>
 
  </div>

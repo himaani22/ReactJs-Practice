@@ -3,7 +3,7 @@ const TodoContainer = ({todoItems , onDeleteClick}) => {
 return (
   <div className='item-container'>
 {todoItems.map((item) => (
-<TodoItem TodoName = {item.name} TodoDate = {item.duedate} 
+<TodoItem key={item.name} TodoName = {item.name} TodoDate = {item.duedate} 
 onDeleteClick = {onDeleteClick}
 ></TodoItem>))}
       
