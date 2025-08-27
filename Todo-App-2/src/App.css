@@ -1,0 +1,21 @@
+.heading{
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+input {
+  width: 100%;
+}
+
+.item-container , .todo-container {
+  text-align: left;
+}
+
+.kg-row{
+  margin: 19px 9px;
+}
+.kg-button{
+  min-width: 90px;
+}
