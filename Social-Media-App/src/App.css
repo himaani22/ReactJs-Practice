@@ -1,0 +1,38 @@
+.appContainer{
+    display: flex;
+}
+.content{
+    width: 100%;
+}
+.sideBar{
+    min-height: 800px;
+}
+
+.post-card{
+    margin: 20px 50px;
+    margin-top: 10%;
+  
+}
+
+.hashtag{
+    margin: 3px  3px;
+}
+
+.reactions{
+    margin: 15px 0 0 0 ;
+}
+.Create-Post{
+width: 80%;
+margin-left: 10%;
+margin-top: 7%;
+}
+
+.sticky-footer {
+  position: fixed;
+  text-align: center;
+  bottom:  0;
+  min-width: 80%;
+  background: #fff; /* or your preferred color */
+  
+
+}
