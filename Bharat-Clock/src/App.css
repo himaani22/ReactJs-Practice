@@ -1,0 +1,18 @@
+.Center{
+  margin-top : 300px;
+  border : 2px black solid;
+  height: 200px;
+  width: 800px;
+ margin-left: 300px;
+  align-items: center;
+}
+
+.slogan{
+  font-size: 30px;
+  margin-top: 20px;
+
+}
+.head{
+    color: brown;
+    font-size: 40px;
+}
