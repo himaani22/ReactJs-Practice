@@ -59,7 +59,7 @@ dispatchPostList({
       setFetching(true);
 
       const controller = new AbortController();
-      
+  
 
 fetch('https://dummyjson.com/posts' , )
 .then((res) => res.json())

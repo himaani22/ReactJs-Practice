@@ -1,10 +1,10 @@
 import { useContext, useRef } from "react";
 import  { PostListData } from "../Store/post-list-store";
-
+import { useNavigate } from "react-router-dom";
 
 const createPost = () => {
 const {addPost} = useContext(PostListData)
-
+const navigate = useNavigate();
   const UserIdElement = useRef();
   const PostTitleElement = useRef();
   const PostContentElement = useRef();
@@ -17,7 +17,7 @@ event.preventDefault();
 const userId = Number(UserIdElement.current.value); 
     const title = PostTitleElement.current.value;
     const content = PostContentElement.current.value;
-    const reactions = Number(ReactionsElement.current.value) ; 
+    const reactions = Number(ReactionsElement.current.value) || 0; 
     const tags = HashtagsElement.current.value.split(" ");
 
 
@@ -35,10 +35,7 @@ const userId = Number(UserIdElement.current.value);
       body: JSON.stringify({
         title: title,
         body: content,
-      reactions: {
-        likes: reactions?.likes || 0,
-        dislikes: reactions?.dislikes ||0
-        },
+        reactions: reactions,
         userId: userId,      
         tags: tags,
       }),
@@ -46,6 +43,7 @@ const userId = Number(UserIdElement.current.value);
       .then((res) => res.json())
       .then((postt) => {
         addPost(postt); //  add new post into context
+        navigate("/");
       })
       .catch((err) => console.error("Error creating post:", err));
   };
